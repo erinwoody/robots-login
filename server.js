@@ -29,8 +29,6 @@ MongoClient.connect(dbUrl, (err, db) => {
 app.get("/", (req, res) => {
     Robots.find({}).toArray((err, foundRobots) => {
         if (err) res.status(500).send(err);
-        // res.render a template with the data.
-        // res.send(foundRobots);
         res.render('index', {
             users: foundRobots
         });
