@@ -15,9 +15,18 @@
   justify-content: space-around;
 }
 
-.title {
-  width: 95%;
-  align-self: flex-end;
+.header-link, a:visited {
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+    color: red;
 }
 
 .userbox {

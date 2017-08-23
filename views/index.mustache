@@ -13,12 +13,15 @@
 
     <section class="wrapper">
 
-        <div class="container">
+        <h1 class="title"> Index Title</h1>
+        <nav>
+            <a class="header-link" href="/">Home</a>
+            <a class="header-link" href="/employed">Employed</a>
+            <a class="header-link" href="/unemployed">Unemployed</a>
+        </nav>
 
-            <h1 class="title"> Index Title</h1>
-            <a href="/">Home</a>
-            <a href="/employed">Employed</a>
-            <a href="/unemployed">Unemployed</a> {{#users}}
+        <div class="container">
+             {{#users}}
             <div class="userbox">
                 <a href="/profile/{{_id}}"><img src="{{avatar}} " alt=" " class="avatar "></a>
                 <div class="name">{{name}}</div>
