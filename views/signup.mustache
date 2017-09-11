@@ -3,41 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible"
-    content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet"
-    href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body class="signup-body">
   <h1>Sign up!</h1>
-  <form action="/auth/signup"
-    method="POST">
-    <label for="">Name</label>
-    <input type="text"
-      name="name"
-      placeholder="John Doe"
-      required> <br>
-    <label for="">Username</label>
-    <input type="text"
-      name="username"
-      placeholder="DragonSlayer3017"
-      required> <br>
-    <label for="">Email</label>
-    <input type="email"
-      name="email"
-      placeholder="me@myemail.com"
-      required> <br>
-    <label for="">Password</label>
-    <input type="password"
-      name="password"
-      placeholder="password1234"
-      required> <br>
-    <button type="Submit">Sign up!</button>
-  </form>
+  <div class="form-box">
+    <form class="signup-form" action="/auth/signup" method="POST">
+      <input class="signup-form-input" type="text" name="name" placeholder="Name" autocomplete="off" required>
+      <input class="signup-form-input" type="email" name="email" placeholder="Email@email.com" autocomplete="off" required>
+      <input class="signup-form-input" type="text" name="username" placeholder="Username" autocomplete="off" required>
+      <input class="signup-form-input" type="password" name="password" placeholder="Password" autocomplete="off" required>
+
+      <button type="Submit" class="btn">Sign Up!</button>
+    </form>
+  </div>
 </body>
 
 </html>

@@ -17,15 +17,5 @@
     "mongoose": "^4.10.8",
     "morgan": "^1.8.2",
     "mustache-express": "^1.2.5"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/erinwoody/robots-login.git"
-  },
-  "bugs": {
-    "url": "https://github.com/erinwoody/robots-login/issues"
-  },
-  "homepage": "https://github.com/erinwoody/robots-login#readme",
-  "description": ""
+  }
 }

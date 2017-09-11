@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{users.name}}'s Profile</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+        <nav class="main-nav-prof">
+        <a href="/">All Robots</a>
+        <a href="/user/update">Update Profile</a>
+    </nav>
     <section class="profile-wrapper">
 
         <div class="profile-container">
-
+        {{#users}}
             <div class="profile-top">
                 <div class="image-box">
-                    <img class="profileImage" src="{{avatar}}" alt="">
+                    <img class="profileImage" src="{{avatar}}">
                 </div>
 
                 <div class="userInfo">
@@ -41,6 +45,7 @@
                     <div class="skills">{{.}}</div>{{/skills}}
                 </div>
             </div>
+        {{/users}}
         </div>
 
      </section>

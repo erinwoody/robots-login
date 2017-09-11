@@ -3,9 +3,7 @@ const Robot = require("../models/Robot");
 userRoutes = express.Router();
 
 userRoutes.get("/profile", (req, res) => {
-  res.render("profile", {
-    users: req.session.user
-  });
+  res.render("profile", { users: req.session.user });
 });
 
 userRoutes.get("/update", (req, res) => {
@@ -37,7 +35,5 @@ userRoutes.get("/deleteUser/:id", function (req, res) {
       res.status(500).send(err);
     });
 });
-
-
 
 module.exports = userRoutes;

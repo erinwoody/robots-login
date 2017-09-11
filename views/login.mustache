@@ -3,35 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible"
-    content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet"
-    href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body class="signup-body">
   <h1>Log in!</h1>
   {{#errors}}
   <h4>{{.}}</h4>
   {{/errors}}
-  <form action="/auth/login"
-    method="POST">
-    <label for="">Username</label>
-    <input type="text"
-      name="username"
-      placeholder="DragonSlayer3017"
-      required> <br>
-    <label for="">Password</label>
-    <input type="password"
-      name="password"
-      placeholder="password1234"
-      required> <br>
-    <button type="Submit">Log in!</button>
-  </form>
+  <div class="form-box">
+    <form class="signup-form" action="/auth/login" method="POST">
+      <input class="signup-form-input" type="text" name="username" placeholder="username" required> <br>
+      <input class="signup-form-input" type="password" name="password" placeholder="password" required> <br>
+      <button class="btn" type="Submit">Log in!</button>
+    </form>
+  </div>
 </body>
 
 </html>
-

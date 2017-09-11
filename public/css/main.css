@@ -1,4 +1,7 @@
 /* ~~~Index Page~~~ */
+* {
+  text-align: center;
+}
 
 .wrapper {
   justify-content: center;
@@ -25,9 +28,9 @@
   display: inline-block;
 }
 
-a:hover, a:active {
-    color: red;
-}
+ a:hover, a:active {
+    color: #467796;
+} 
 
 .userbox {
   display: flex;
@@ -42,6 +45,7 @@ a:hover, a:active {
   padding: .5rem 0 .5rem 0;
   font-size: 1.5rem;
   color: #528db3;
+  text-decoration: none;
 }
 
 .job {
@@ -128,4 +132,72 @@ a:hover, a:active {
 
 .edu {
   padding-bottom: 1rem;
+}
+
+
+/* ~~~Sign Up Page~~~ */
+.signup-form{
+  display: block;
+  width: 90%;
+  border: 0;
+  background: #efeded;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  font-size: .7rem;
+  color: #467796;
+  letter-spacing: 2px;
+  
+} 
+
+
+.btn {
+  display: block;
+  width: 48%;
+  margin-top: 10px;
+  background: #528db3;
+  padding: 15px;
+  border: 0;
+  font-size: .6rem;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 3px;
+  margin-left: 70px;
+}    
+
+.btn:last-of-type {
+  background: #528db3;
+  color: #fff;
+}     
+
+.btn:hover {
+  background: #467796;
+}
+
+.form-box {
+  max-width: 300px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: gray;
+  box-shadow: 10px 10px 0 rgba(0,0,0,.1);
+}
+
+.signup-form-input {
+  display: block;
+  width: 90%;
+  border: 0;
+  background: white;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  font-size: .7rem;
+  color: lighten(#000, 40%);
+  letter-spacing: 2px;
+}
+
+signup-form-input :focus {
+  background: lightgray;
 }

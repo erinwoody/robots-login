@@ -11,21 +11,20 @@ authRoutes.get("/signup", (req, res) => {
 //////SIGNUP/////
 
 authRoutes.post("/signup", (req, res) => {
-  let newRobot = new Robot(req.body);
+  let newRobot = new Robot(req.body); //schema name
 
   if (!newRobot.job) {
     newRobot.job = null;
   }
 
-
   let salt = bcrypt.genSaltSync(10);
   newRobot.password = bcrypt.hashSync(newRobot.password, salt);
   newRobot
     .save()
-    .then(function(savedUser) {
+    .then(function (savedUser) {
       res.redirect("/auth/login");
     })
-    .catch(function(err) {
+    .catch(function (err) {
       if (!savedUser) res.status(500).send("Error saving user!");
     });
 });
@@ -35,23 +34,28 @@ authRoutes.get("/login", (req, res) => {
 });
 
 
-
 /////LOGIN/////
 
 authRoutes.post("/login", (req, res) => {
   let reqUsername = req.body.username;
   let reqPassword = req.body.password;
 
-  Robot.findOne({ username: reqUsername }).then(function(foundUser) {
-    
+  Robot.findOne({
+    username: reqUsername
+  }).then(function (foundUser) {
+
     if (!foundUser) {
-      return res.render("login", { errors: ["No users found."] });
+      return res.render("login", {
+        errors: ["No users found."]
+      });
     }
 
     const authorized = bcrypt.compareSync(reqPassword, foundUser.password);
 
     if (!authorized) {
-      return res.render("index", { errors: ["Password does not match."] });
+      return res.render("index", {
+        errors: ["Password does not match."]
+      });
     }
 
     delete foundUser.password;
