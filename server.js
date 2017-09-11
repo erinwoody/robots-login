@@ -10,9 +10,10 @@ const indexRoutes = require("./routes/indexRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const profileRoutes = require("./routes/profileRoutes");
+const employmentRoutes = require("./routes/employmentRoutes");
 const mongoose = require("mongoose");
 const bluebird = require("bluebird");
-
+const bcrypt = require("bcryptjs");
 
 
 const app = express();
@@ -38,92 +39,10 @@ app.use("/", indexRoutes);
 app.use("/auth", authRoutes);
 app.use("/user", checkAuth, userRoutes);
 app.use("/profile", profileRoutes);
+app.use("/employment", employmentRoutes);
+app.use("/login", authRoutes);
+app.use("/signup", authRoutes);
 
-
-
-//ROBOTS
-// app.get("/", (req, res) => {
-//     Robot.find({}).toArray((err, foundRobot) => {
-//         if (err) res.status(500).send(err);
-//         res.render('index', {
-//             robot: foundRobot
-//         });
-//         console.log(foundRobot);
-//     });
-// });
-
-// app.get("/profile/:id", (req, res) => {
-//     Robot.findOne({
-//         _id: ObjectId(req.params.id)
-//     }, function (err, foundRobot) {
-//         if (err) res.status(500).send(err);
-//         if (!foundRobot) res.send("No robot found");
-//         // res.send(foundRobot);
-//         res.render('profile', foundRobot);
-//     });
-// });
-
-// app.get("/employed", (req, res) => {
-//     Robot.find({
-//         job: {
-//             $ne: null
-//         }
-//     }).toArray((err, foundRobot) => {
-//         if (err) res.status(500).send(err);
-//         res.render('index', {
-//             robot: foundRobot
-//         })
-//     });
-// });
-
-// app.get("/unemployed", (req, res) => {
-//     Robot.find({
-//         job: null
-//     }).toArray((err, foundRobot) => {
-//         if (err) res.status(500).send(err);
-//         res.render('index', {
-//             robot: foundRobot
-//         })
-//     });
-// });
-
-
-// //LOGIN
-// app.get("/signup", (req, res) => {
-//     res.render("signup"); 
-// });
-
-// app.post("/signup", (req, res) => {
-//     let newRobot = req.body;
-
-//     console.log("newRobot: ", newRobot);
-//     robot.push(newRobot);
-//     console.log("robot: ", robot);
-//     res.redirect("/login");
-// });
-
-// app.get("/login", (req, res) => {
-//     res.render("login");
-// });
-
-// app.post("/login", (req, res) => {
-//     let reqUsername = req.body.username;
-//     let reqPassword = req.body.password;
-
-//     let foundRobot = users.find(robot => robot.username === reqUsername);
-//     if (!foundRobot) {
-//         return res.render("login", { errors: ["User not found"] });
-//     }
-
-//     if (foundRobot.password === reqPassword) {
-//         delete foundRobot.password;
-//         req.session.robot = foundRobot;
-//         res.redirect("/");
-//     }   else {
-//         return res.render("login", { errors: ["Password does not match"] });    
-//     }
-// });
-
-
+//PORT
 app.listen(8000, () => console.log('It works!'));
 

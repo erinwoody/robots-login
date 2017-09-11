@@ -1,15 +1,17 @@
 const express = require("express");
-profileRoutes = express.Router();
+const profileRoutes = express.Router();
 const Robot = require("../models/Robot");
+const bcrypt = require("bcryptjs");
 
 
-profileRoutes.get("/profile/:id", (req, res) => {
-    Robot.findOne({
-        _id: ObjectId(req.params.id)
-    }, function (err, foundRobot) {
-        if (err) res.status(500).send(err);
-        if (!foundRobot) res.send("No robot found");
-        res.render('profile', foundRobot);
+profileRoutes.get("/:id", (req, res) => {
+
+    Robot.findById(req.params.id).then(foundRobot => {
+        if (!foundRobot) {
+            res.status(500).send(err);
+        }        
+        res.render('profile', { users: foundRobot });
     });
 });
 
+module.exports = profileRoutes;
