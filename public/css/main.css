@@ -1,6 +1,7 @@
 /* ~~~Index Page~~~ */
 * {
   text-align: center;
+  font-family: sans-serif;
 }
 
 .wrapper {
@@ -200,4 +201,8 @@
 
 signup-form-input :focus {
   background: lightgray;
+}
+
+h1 {
+  color: #528db3;
 }

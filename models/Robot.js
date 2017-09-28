@@ -11,10 +11,6 @@ const robotSchema = new Schema({
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: true
-    },
     avatar: String,
     password: {
         type: String,
@@ -32,7 +28,6 @@ const robotSchema = new Schema({
     },
     phone: {
         type: String,
-        required: true
     },
     university: String,
     skills: Array,

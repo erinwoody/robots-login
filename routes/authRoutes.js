@@ -7,11 +7,11 @@ authRoutes.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-
 //////SIGNUP/////
 
 authRoutes.post("/signup", (req, res) => {
   let newRobot = new Robot(req.body); //schema name
+  console.log("newRobot: ", newRobot);
 
   if (!newRobot.job) {
     newRobot.job = null;
@@ -21,18 +21,18 @@ authRoutes.post("/signup", (req, res) => {
   newRobot.password = bcrypt.hashSync(newRobot.password, salt);
   newRobot
     .save()
-    .then(function (savedUser) {
+    .then(function(savedUser) {
+      console.log("savedUser: ", savedUser);
       res.redirect("/auth/login");
     })
-    .catch(function (err) {
-      if (!savedUser) res.status(500).send("Error saving user!");
+    .catch(function(err) {
+      if (!err) res.status(500).send("Error saving user!");
     });
 });
 
 authRoutes.get("/login", (req, res) => {
   res.render("login");
 });
-
 
 /////LOGIN/////
 
@@ -42,8 +42,7 @@ authRoutes.post("/login", (req, res) => {
 
   Robot.findOne({
     username: reqUsername
-  }).then(function (foundUser) {
-
+  }).then(function(foundUser) {
     if (!foundUser) {
       return res.render("login", {
         errors: ["No users found."]

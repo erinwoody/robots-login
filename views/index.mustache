@@ -13,23 +13,22 @@
 
     <section class="wrapper">
 
-        <h1 class="title"> Index Title</h1>
+        <h1 class="title"> Robots </h1>
         <nav>
             <a class="header-link" href="/">All Robots</a>
             <a class="header-link" href="/employment/employed">Employed</a>
             <a class="header-link" href="/employment/unemployed">Unemployed</a>
-        </nav>
-        <div>
+
             <a class="header-link" href="/user/profile">My Profile</a>
             <a class="header-link" href="/auth/login">Login</a>
             <a class="header-link" href="/auth/signup">Signup</a>
-        </div>
+        </nav>
+
         <div class="container">
-             {{#users}}
+            {{#users}}
             <div class="userbox">
                 <img src="{{avatar}}" class="avatar"></a>
-                <a href="/profile/{{_id}}" class="name">{{name}}</a>
-                {{#job}}
+                <a href="/profile/{{_id}}" class="name">{{name}}</a> {{#job}}
                 <div class="job">{{job}}, {{company}}</div>{{/job}} {{^job}}
                 <div class="no-job">Available for hire</div>
                 {{/job}}

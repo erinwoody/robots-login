@@ -19,7 +19,4 @@ employmentRoutes.get("/unemployed", (req, res) => {
 });
 
 
-
-
-
 module.exports = employmentRoutes;
